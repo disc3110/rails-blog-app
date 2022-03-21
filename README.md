@@ -1,24 +1,45 @@
-# README
+# Rails Blog App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> The Blog app is an example of a blog website. It is fully functional website that shows the list of posts and empower readers to interact with them by adding comments and liking posts.
 
-Things you may want to cover:
 
-* Ruby version
+## Getting Started
 
-* System dependencies
+You need to have Ruby and Rails in you operating system.
+> if you don't have Ruby installed in your machine, you can follow [this link](https://github.com/microverseinc/curriculum-ruby/blob/main/simple-ruby/articles/ruby_installation_instructions.md
+) to find instructions for all operating systems.
 
-* Configuration
+* Fork a copy to your repository and clone it locally: `git@github.com:disc3110/rails-blog-app.git`
 
-* Database creation
+* Move to the main folder of the app `cd path/rails-blog-app`
 
-* Database initialization
+* Now, start the server in your terminal `rails server`
 
-* How to run the test suite
+* Finally, go to your localhost in any web server
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Authors
 
-* ...
+🧑‍💻 **Diego**
+
+- GitHub: [@disc3110](https://github.com/disc3110)
+- LinkedIn: [@diego-solis-277651184](https://www.linkedin.com/in/diego-solis-277651184/)
+
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
