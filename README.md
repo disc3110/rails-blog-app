@@ -6,6 +6,7 @@
 ## Getting Started
 
 You need to have Ruby and Rails in you operating system.
+- You need to have postgress with a table my_new_app_development. Configure config/database.yml with your credentials
 > if you don't have Ruby installed in your machine, you can follow [this link](https://github.com/microverseinc/curriculum-ruby/blob/main/simple-ruby/articles/ruby_installation_instructions.md
 ) to find instructions for all operating systems.
 
