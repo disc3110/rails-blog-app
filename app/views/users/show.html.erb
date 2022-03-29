@@ -1,5 +1,8 @@
-<%= render "shared/user_box" %>
-<p class="border p-2"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis ante tempus, faucibus augue ut, iaculis arcu. Nam tempor imperdiet felis, et aliquam nisl vestibulum at. Morbi ut sem leo. Donec neque ex, ultrices sit amet est ut, sollicitudin fringilla arcu. Pellentesque sit amet bibendum mi. Cras dapibus posuere nibh, quis placerat magna congue tempor. </p>
-<%= render "shared/post_box" %>
-
-<button type="button" class="btn btn-secondary">See all posts</button>
+<%= render "shared/user_box", :name => @shown_user.name, :post_num => @shown_user.postsCounter, :photo => @shown_user.photo %>
+<p class="border p-2 bg-dark"> <%= @shown_user.bio %> </p>
+<% @recent_posts.each do |post|%>
+  <%= link_to (user_post_path(@shown_user, post)) do %>
+  <%= render "shared/post_box", :title => post.title, :text => post.text, :comments_count => post.commentsCounter, :likes_count => post.likesCounter%>
+  <% end %>
+<% end %>
+<a href="/users/<%= @shown_user.id %>/posts" class="btn btn-secondary">See all posts</a>

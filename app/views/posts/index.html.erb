@@ -1,8 +1,12 @@
-<%= render "shared/user_box" %>
-<%= render "shared/post_box" %>
-<div class="border p-2"> 
-  <p>Username: Comment 1</p>
-  <p>Username: Comment 2</p>
-  <p>Username: Comment 3</p>
-</div>
-<button type="button" class="btn btn-secondary">Pagination</button>
+<%= render "shared/user_box", :name => @user.name, :post_num => @user.postsCounter, :photo => @user.photo %>
+<% @posts_with_comments.each do |post_and_comments| %>
+  <% post = post_and_comments[:post]%>
+  <%= link_to (user_post_path(@user, post)) do %>
+  <%= render "shared/post_box", :title => post.title, :text => post.text, :comments_count => post.commentsCounter, :likes_count => post.likesCounter %>
+  <% end %> 
+  <% post_and_comments[:comments].each do |comment| %>
+  <div class="border p-2 bg-dark">
+  <p><%= comment.author.name %>: <%= comment.text %></p>
+  </div>
+  <% end %>
+<% end %>

@@ -1,1 +1,5 @@
-<%= render "shared/user_box" %>
+<% @shown_users.each do |user| %>
+  <%= link_to user_path(user) do %>
+  <%= render "shared/user_box", :name => user.name, :post_num => user.postsCounter, :photo => user.photo %>
+  <% end %>
+<% end %>
