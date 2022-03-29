@@ -1,5 +1,5 @@
-<div class="post-box border my-2 p-2"> 
-  <h3> Post #1 </h3>
-  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris... </p>
-  <p class="text-end">Comments: x Likes:y</p>
+<div class="post-box my-2 p-2 bg-dark"> 
+  <h3> <%= title %> </h3>
+  <p> <%= text %> </p>
+  <p class="text-end">Comments: <%= comments_count ? comments_count : "0" %> Likes:<%= likes_count ? likes_count : "0" %></p>
 </div>

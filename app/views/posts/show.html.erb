@@ -1,10 +1,10 @@
-<div class="border p-2 mt-3"> 
-  <h2>Post #1 by username</h2>
-  <p class="text-end">Comments: x Likes: y</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis ante tempus, faucibus augue ut, iaculis arcu. Nam tempor imperdiet felis, et aliquam nisl vestibulum at. Morbi ut sem leo. Donec neque ex, ultrices sit amet est ut, sollicitudin fringilla arcu. Pellentesque sit amet bibendum mi. Cras dapibus posuere nibh, quis placerat magna congue tempor. Ut porta tortor pharetra, tincidunt lorem et, convallis ante. Phasellus consequat nibh sed tincidunt fermentum.</p>
-</div>
-<div class="border p-2"> 
-  <p>Username: Comment 1</p>
-  <p>Username: Comment 2</p>
-  <p>Username: Comment 3</p>
-</div>
+<div class="border p-2 mt-3 bg-dark"> 
+  <h2><%= @post.title %> by <%= @post.author.name %></h2>
+  <p class="text-end">Comments: <%= @post.commentsCounter ? @post.commentsCounter : "0" %> Likes:<%= @post.likesCounter ? @post.likesCounter : "0" %></p>
+  <p><%= @post.text  %></p>
+</div> 
+<% @comments.each do |comment| %>
+  <div class="border p-2 bg-dark">
+  <p><%= comment.author.name %>: <%= comment.text %></p>
+  </div>
+<% end %>
