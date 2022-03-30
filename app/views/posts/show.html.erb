@@ -2,9 +2,12 @@
   <h2><%= @post.title %> by <%= @post.author.name %></h2>
   <p class="text-end">Comments: <%= @post.commentsCounter ? @post.commentsCounter : "0" %> Likes:<%= @post.likesCounter ? @post.likesCounter : "0" %></p>
   <p><%= @post.text  %></p>
+  <%= button_to 'Like', like_path(user_id: @user.id, post_id: @post.id), method: "put", class: 'btn btn-primary' %>
 </div> 
 <% @comments.each do |comment| %>
   <div class="border p-2 bg-dark">
   <p><%= comment.author.name %>: <%= comment.text %></p>
   </div>
 <% end %>
+
+<%= render 'shared/new_comment', user: @user, post: @post  %>
