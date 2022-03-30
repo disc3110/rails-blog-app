@@ -16,9 +16,7 @@ class PostsController < ApplicationController
 
   def create
     @user = current_user
-    p(post_params)
     @post = @user.posts.new(post_params)
-    p(@post)
 
     if @post.save
       redirect_to user_post_path(@user, @post)
@@ -28,7 +26,7 @@ class PostsController < ApplicationController
   end
 
   def like
-    @post = Post.all.find(params[:id])
+    @post = Post.find(params[:id])
     @user = User.find(params[:user_id])
     @current_user = current_user
     @like = @current_user.likes.new(post_id: @post.id)
