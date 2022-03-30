@@ -1,0 +1,10 @@
+<%= form_with model: [user, post, post.comments.build], :html => { :class => "d-flex flex-column align-items-center"} do |form| %>
+  <div>
+    <%= form.text_field :text, class: "form-control m-2", 
+   placeholder: "Write something..." %>
+  </div>
+
+  <div>
+    <%= form.submit "Comment", class: "btn btn-secondary" %>
+  </div>
+<% end %>
