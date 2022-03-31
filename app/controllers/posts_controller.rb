@@ -17,10 +17,14 @@ class PostsController < ApplicationController
   def create
     @user = current_user
     @post = @user.posts.new(post_params)
+    @post.commentsCounter = 0
+    @post.likesCounter = 0
 
     if @post.save
+      flash[:notice] = 'Post was successfully created'
       redirect_to user_post_path(@user, @post)
     else
+      flash.now[:alert] = @post.errors.messages
       render :new, status: :unprocessable_entity
     end
   end
