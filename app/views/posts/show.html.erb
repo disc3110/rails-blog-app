@@ -4,7 +4,7 @@
   <p><%= @post.text  %></p>
   <%= button_to 'Like', like_path(user_id: @user.id, post_id: @post.id), method: "put", class: 'btn btn-primary' %>
 </div> 
-<% @comments.each do |comment| %>
+<% @comments.includes(:author).each do |comment| %>
   <div class="border p-2 bg-dark">
   <p><%= comment.author.name %>: <%= comment.text %></p>
   </div>

@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @posts_with_comments = @user.posts.all.map { |post| { post: post, comments: post.five_recent_comments } }
+    @posts_with_comments = @user.posts.map { |post| { post: post, comments: post.five_recent_comments } }
   end
 
   def show

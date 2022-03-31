@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
       flash[:notice] = 'Post was successfully created'
     else
       flash[:alert] = @comment.errors.messages
-    end 
+    end
     redirect_to user_post_path(@user, @post)
   end
 
