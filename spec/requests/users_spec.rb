@@ -10,7 +10,7 @@ RSpec.describe 'Users', type: :request do
       expect(response).to render_template('index')
     end
     it 'body has the correct text' do
-      expect(response.body).to include('User name')
+      expect(response.body).to include('RailsBlogApp')
     end
   end
 

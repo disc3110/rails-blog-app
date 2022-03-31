@@ -49,6 +49,7 @@ gem 'sassc-rails'
 # gem "image_processing", "~> 1.2"
 
 gem 'bootstrap', '~> 5.0.2'
+gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 group :development, :test do
@@ -68,6 +69,8 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
+
+gem 'bullet', group: 'development'
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]

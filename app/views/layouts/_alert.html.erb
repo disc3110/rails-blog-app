@@ -1,0 +1,7 @@
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <% alert.each do |x, error| %>
+    <%= x %>
+    <%= error.first %>
+  <% end %>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>

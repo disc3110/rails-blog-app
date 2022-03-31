@@ -4,6 +4,8 @@ class Comment < ApplicationRecord
 
   after_save :update_post_comments
 
+  validates :text, presence: true, length: { maximum: 250 }
+
   def three_recent_posts
     posts.order(created_at: :desc).limit(quantity)
   end
