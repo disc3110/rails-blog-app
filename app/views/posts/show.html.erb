@@ -3,6 +3,7 @@
   <p class="text-end">Comments: <%= @post.commentsCounter ? @post.commentsCounter : "0" %> Likes:<%= @post.likesCounter ? @post.likesCounter : "0" %></p>
   <p><%= @post.text  %></p>
   <%= button_to 'Like', like_path(user_id: @user.id, post_id: @post.id), method: "put", class: 'btn btn-primary' %>
+  <%= button_to 'Delete', destroy_path(user_id: @user.id, post_id: @post.id), method: "delete", class: 'btn btn-danger' %>
 </div> 
 <% @comments.includes(:author).each do |comment| %>
   <div class="border p-2 bg-dark">
