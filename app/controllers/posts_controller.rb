@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
-  
+
   def index
     @user = User.find(params[:user_id])
     @posts_with_comments = @user.posts.map { |post| { post: post, comments: post.five_recent_comments } }
@@ -41,9 +41,12 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    # authorize! :destroy, current_user
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
-    Post.find(@post.id).destroy
+    @post.destroy
+    flash[:notice] = 'Post was deleted'
+    redirect_to user_path(@user)
   end
 
   private

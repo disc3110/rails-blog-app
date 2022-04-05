@@ -11,7 +11,7 @@ ActionMailer::Base.smtp_settings = {
   address: 'smtp.gmail.com' ,
   port: 465, 
   domain: 'gmail.com', 
-  user_name: 'sendemail5500@gmail.com', 
+  user_name: 'test45465454@gmail.com', 
   password: 'Kh123456', 
   authentication: 'plain',
   :ssl => true, :tsl => true, enable_starttls_auto: true
