@@ -41,7 +41,6 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    # authorize! :destroy, current_user
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
     @post.destroy

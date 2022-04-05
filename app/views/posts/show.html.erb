@@ -5,13 +5,16 @@
   <div class="d-flex">
     <%= button_to 'Like', like_path(user_id: @user.id, post_id: @post.id), method: "put", class: 'btn btn-primary' %>
     <% if can? :destroy, @post %>
-    <%= button_to 'Delete', user_post_path(user_id: @user.id, post_id: @post.id), method: "delete", class: 'btn btn-danger' %>
+      <%= button_to 'Delete', user_post_path(user_id: @user.id, post_id: @post.id), method: "delete", class: 'btn btn-danger' %>
     <% end %>
   </div>
 </div> 
 <% @comments.includes(:author).each do |comment| %>
-  <div class="border p-2 bg-dark">
+  <div class="border p-2 bg-dark d-flex jusify-content-between">
   <p><%= comment.author.name %>: <%= comment.text %></p>
+  <% if can? :destroy, comment %>
+    <%= button_to 'Delete', user_post_comment_path(user_id: @user.id, post_id: @post.id, id: comment.id), method: "delete", class: 'btn btn-danger' %>
+  <% end %>
   </div>
 <% end %>
 
