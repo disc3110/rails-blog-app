@@ -49,6 +49,7 @@ gem 'sassc-rails'
 # gem "image_processing", "~> 1.2"
 
 gem 'bootstrap', '~> 5.0.2'
+gem 'devise'
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 gem 'rubocop', '>= 1.0', '< 2.0'
 

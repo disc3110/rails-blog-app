@@ -8,6 +8,8 @@
 
 require 'faker'
 
+User.destroy_all
+
 (1..20).each do |id|
   User.create!(
       id: id, 
@@ -15,6 +17,8 @@ require 'faker'
       photo: Faker::Lorem.sentence,
       bio: Faker::Lorem.paragraph(sentence_count: 8, supplemental: true),
       postsCounter: 0,
+      email: Faker::Internet.email,
+      password: "123456"
   )
 end
 
