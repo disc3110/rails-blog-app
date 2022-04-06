@@ -8,6 +8,9 @@
 
 require 'faker'
 
+Like.destroy_all
+Comment.destroy_all
+Post.destroy_all
 User.destroy_all
 
 (1..20).each do |id|

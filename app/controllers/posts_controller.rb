@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.find(params[:user_id])
     @posts_with_comments = @user.posts.map { |post| { post: post, comments: post.five_recent_comments } }
@@ -36,6 +38,14 @@ class PostsController < ApplicationController
     @like = @current_user.likes.new(post_id: @post.id)
     @like.save
     redirect_to user_post_path(@user, @post)
+  end
+
+  def destroy
+    @user = User.find(params[:user_id])
+    @post = Post.find(params[:id])
+    @post.destroy
+    flash[:notice] = 'Post was deleted'
+    redirect_to user_path(@user)
   end
 
   private
