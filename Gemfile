@@ -73,7 +73,7 @@ group :development do
   # gem "spring"
 end
 
-gem 'bullet', group: 'development'
+gem 'bullet', require: true
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]

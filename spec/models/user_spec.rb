@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before :each do
-    @user = User.new(name: 'Diego', photo: 'http://photo.com', bio: 'Hello rails', postsCounter: 5)
+    @user = User.new(name: 'Diego', photo: 'http://photo.com', bio: 'Hello rails', postsCounter: 5, email: 'rspec@gmail.com', password: '123456')
   end
 
   it 'name should be valid with correct parameters' do
@@ -26,7 +26,8 @@ RSpec.describe User, type: :model do
 
   describe '#three_recent_post' do
     it 'returns the last 3 posts' do
-      @user.save
+      @user.skip_confirmation!
+      @user.save!
 
       post1 = Post.create!(title: 'New Post 1', text: 'This is a new text', author_id: @user.id, commentsCounter: 5,
                            likesCounter: 5)

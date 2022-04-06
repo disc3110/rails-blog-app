@@ -22,8 +22,10 @@ end
 
 Capybara.javascript_driver = :selenium_chrome
 
+
 config.before(:suite) do
   DatabaseCleaner.clean_with(:truncation)
+  Rails.application.load_seed # loading seeds
 end
 
 config.before(:each) do
