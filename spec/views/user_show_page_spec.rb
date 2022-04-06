@@ -1,8 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "User Show", type: :feature do
+RSpec.describe 'User Show', type: :feature do
   before :each do
-    @user = User.new(name: 'Diego', photo: 'http://photo.com', bio: 'Hello rails', postsCounter: 5, email: 'rspec@gmail.com', password: '123456')
+    @user = User.new(name: 'Diego', photo: 'http://photo.com', bio: 'Hello rails', postsCounter: 5,
+                     email: 'rspec@gmail.com', password: '123456')
     @user.skip_confirmation!
     @user.save!
     @user.posts.create(title: 'New Post 1', text: 'This is a new text', commentsCounter: 5, likesCounter: 5)
