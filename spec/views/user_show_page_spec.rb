@@ -24,8 +24,6 @@ RSpec.describe "User Show", type: :feature do
     expect(page).to have_content('Hello rails')
     expect(page).to have_selector('.post-box', count: 3)
     expect(page).to have_content('See all posts')
-    # click_on 'Robert'
-    # expect(page).to have_current_path user_path(@user)
   end
 
   it "it redirects to that post's show page" do
