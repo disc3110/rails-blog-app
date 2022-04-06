@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @shown_users = User.take(3)
+    @shown_users = User.order(created_at: :desc).limit(5)
   end
 
   def show

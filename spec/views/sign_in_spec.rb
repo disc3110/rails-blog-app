@@ -36,6 +36,4 @@ RSpec.describe "Sign In", type: :feature do
     expect(page).to have_current_path root_path
   end
 
-  # @user.skip_confirmation!
-  # @user.save!
 end
