@@ -14,7 +14,7 @@ Post.destroy_all
 User.destroy_all
 
 (1..20).each do |id|
-  User.create!(
+  user = User.new(
       id: id, 
       name: Faker::Name.name,
       photo: Faker::Lorem.sentence,
@@ -23,6 +23,8 @@ User.destroy_all
       email: Faker::Internet.email,
       password: "123456"
   )
+  user.skip_confirmation!
+  user.save!
 end
 
 (1..50).each do |id|
