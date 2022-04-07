@@ -3,11 +3,11 @@ class PostsController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    @posts_with_comments = @user.posts.map { |post| { post: post, comments: post.five_recent_comments } }
+    @posts_with_comments = @user.posts.map { |post| { post:, comments: post.five_recent_comments } }
     @posts = @user.posts
     respond_to do |format|
-        format.html 
-        format.json { render json: @posts }
+      # format.html
+      format.json { render json: @posts }
     end
   end
 

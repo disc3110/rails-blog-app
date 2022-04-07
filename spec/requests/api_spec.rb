@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'RESTful API', type: :request do
   before do
     @user = User.new(name: 'Diego', photo: 'http://photo.com', bio: 'Hello rails', postsCounter: 5,
-      email: 'rspec@gmail.com', password: '123456')
+                     email: 'rspec@gmail.com', password: '123456')
     @user.skip_confirmation!
     @user.save!
     @post = @user.posts.create(title: 'New Post 3', text: 'This is a new text', commentsCounter: 5, likesCounter: 5)
@@ -13,7 +13,7 @@ RSpec.describe 'RESTful API', type: :request do
   # Test suite for GET /todos/:id
   describe 'endpoint to list all posts for a user' do
     before do
-      get "/users/#{user_id}/posts", params: {}, headers: headers, as: :json
+      get "/users/#{user_id}/posts", params: {}, headers:, as: :json
     end
 
     context 'when the user exists' do
@@ -37,15 +37,4 @@ RSpec.describe 'RESTful API', type: :request do
       end
     end
   end
-
-  describe 'endpoint to list all comments for a users post' do
-  end
-
-  describe 'endpoint to add a comment to a post.' do
-  end
-
-  describe 'Authentificate endpoint' do
-  end
-  
 end
-

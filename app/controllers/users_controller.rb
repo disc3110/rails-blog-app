@@ -8,6 +8,5 @@ class UsersController < ApplicationController
     @recent_posts = @shown_user.three_recent_posts
   end
 
-  def create
-  end
+  def create; end
 end
