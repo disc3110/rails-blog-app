@@ -51,7 +51,10 @@ gem 'sassc-rails'
 gem 'bootstrap', '~> 5.0.2'
 gem 'cancancan'
 gem 'devise'
+gem 'devise-jwt', '~> 0.7.0'
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
+gem 'jsonapi-rails'
+gem 'rack-cors'
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 group :development, :test do
@@ -78,6 +81,8 @@ gem 'bullet', require: true
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
+  gem 'jsonapi-rspec'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers', '~> 3.1'
   gem 'webdrivers'
 end
