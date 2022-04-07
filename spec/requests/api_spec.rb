@@ -13,7 +13,7 @@ RSpec.describe 'RESTful API', type: :request do
   # Test suite for GET /todos/:id
   describe 'endpoint to list all posts for a user' do
     before do
-      get "/users/#{user_id}/posts", params: {}, headers:, as: :json
+      get "/users/#{user_id}/posts", params: {}, headers: headers, as: :json
     end
 
     context 'when the user exists' do
