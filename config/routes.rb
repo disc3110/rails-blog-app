@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
 
   root "users#index"
 
@@ -13,5 +12,27 @@ Rails.application.routes.draw do
 
   get '/posts/new'
   put '/post/:id/like', to: 'posts#like', as: 'like'
+
+
+  namespace :api, defaults: { format: :json } do
+    resources :users, only: [:index, :show] do
+      resources :posts, only: [:index] do
+        resources :comments, only: [:index, :create]
+      end
+    end
+  end
+
+  devise_for :users,
+    defaults: { format: :json },
+    path: '',
+    path_names: {
+      sign_in: 'api/login',
+      sign_out: 'api/logout',
+      registration: 'api/signup'
+    },
+    controllers: {
+      sessions: 'sessions',
+      registrations: 'registrations'
+    }
   
 end

@@ -51,8 +51,11 @@ gem 'sassc-rails'
 gem 'bootstrap', '~> 5.0.2'
 gem 'cancancan'
 gem 'devise'
+gem 'devise-jwt', '~> 0.7.0'
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 gem 'rubocop', '>= 1.0', '< 2.0'
+gem 'rack-cors'
+gem 'jsonapi-rails'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -81,4 +84,5 @@ group :test do
   gem 'shoulda-matchers', '~> 3.1'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'jsonapi-rspec'
 end
