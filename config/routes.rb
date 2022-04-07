@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     end
   end
 
+  post 'signup', to: 'users#create'
+
   get '/posts/new'
   put '/post/:id/like', to: 'posts#like', as: 'like'
   
